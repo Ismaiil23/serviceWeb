@@ -3,7 +3,7 @@ package com.cooperatives.produitEtUtilisateurs.services;
 import com.cooperatives.produitEtUtilisateurs.models.Product;
 import com.cooperatives.produitEtUtilisateurs.repository.ProductRepository;
 
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 import java.util.List;
 
 public class ProductService {

@@ -6,8 +6,18 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 /**
- * Entité représentant un produit.
+
+ Classe représentant un produit vendu par une coopérative.
+ Cette classe utilise les annotations JPA pour la persistance des données en base de données.
+ Elle est caractérisée par les propriétés suivantes :
+ id : l'identifiant unique du produit
+ name : le nom du produit
+ description : la description du produit
+ price : le prix unitaire du produit
+ unit : l'unité de mesure du produit (ex : "kg", "l", "pièce", etc.)
+ Les getters et setters sont fournis pour accéder et modifier les propriétés de la classe.
  */
+
 @Entity
 public class Product {
 

@@ -9,7 +9,7 @@ import java.util.List;
 
 public class PanierRepository {
 
-    private EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("paniersPU");
+    private EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("cooperativePU");
     private EntityManager entityManager = entityManagerFactory.createEntityManager();
 
     /**

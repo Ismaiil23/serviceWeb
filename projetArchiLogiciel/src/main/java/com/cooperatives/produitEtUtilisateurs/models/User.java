@@ -1,3 +1,10 @@
+/**
+
+ Cette classe représente un utilisateur de l'application.
+ Chaque utilisateur est identifié par un identifiant unique (id),
+ ainsi que par son prénom (firstName), nom (lastName), adresse email (email) et mot de passe (password).
+ */
+
 package com.cooperatives.produitEtUtilisateurs.models;
 
 import jakarta.persistence.Entity;
@@ -5,12 +12,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-/**
- * Entité représentant un utilisateur.
- */
 @Entity
 public class User {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -19,7 +22,7 @@ public class User {
     private String email;
     private String password;
 
-    // Getters and Setters
+// Getters and Setters
 
     public Long getId() {
         return id;
@@ -60,6 +63,4 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
-
-
 }

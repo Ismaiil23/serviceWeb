@@ -13,7 +13,7 @@ import java.util.List;
  */
 public class OrderRepository {
 
-    private EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("commandesPU");
+    private EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("cooperativePU");
     private EntityManager entityManager = entityManagerFactory.createEntityManager();
 
     /**

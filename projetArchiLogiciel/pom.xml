@@ -107,26 +107,7 @@
             <version>5.9.2</version>
             <scope>compile</scope>
         </dependency>
-        <dependency>
-            <groupId>com.blogspot.toomuchcoding</groupId>
-            <artifactId>spock-subjects-collaborators-extension</artifactId>
-            <version>2.0.0</version>
-        </dependency>
-        <dependency>
-            <groupId>au.com.dius</groupId>
-            <artifactId>pact-jvm-provider-spring</artifactId>
-            <version>4.0.10</version>
-        </dependency>
-        <dependency>
-            <groupId>au.com.dius</groupId>
-            <artifactId>pact-jvm-provider-spring_2.12</artifactId>
-            <version>3.6.15</version>
-        </dependency>
-        <dependency>
-            <groupId>au.com.dius</groupId>
-            <artifactId>pact-jvm-provider-spring_2.11</artifactId>
-            <version>3.5.24</version>
-        </dependency>
+
     </dependencies>
 
     <build>

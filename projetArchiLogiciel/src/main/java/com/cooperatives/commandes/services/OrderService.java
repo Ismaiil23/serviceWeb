@@ -1,9 +1,11 @@
 package com.cooperatives.commandes.services;
 
 import com.cooperatives.commandes.models.Order;
-import com.cooperatives.commandes.repository.OrderRepository;
 
-import jakarta.inject.Inject;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.Persistence;
+import jakarta.persistence.PersistenceContext;
 import java.util.List;
 
 /**
@@ -11,16 +13,18 @@ import java.util.List;
  */
 public class OrderService {
 
-    @Inject
-    private OrderRepository orderRepository;
-
+    private EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("commandesPU");
+    private EntityManager em = entityManagerFactory.createEntityManager();
     /**
      * Crée une nouvelle commande.
      * @param order L'objet Order contenant les informations sur la commande.
      * @return L'objet Order créé.
      */
     public Order createOrder(Order order) {
-        return orderRepository.save(order);
+        em.getTransaction().begin();
+        em.persist(order);
+        em.getTransaction().commit();
+        return order;
     }
 
     /**
@@ -28,7 +32,7 @@ public class OrderService {
      * @return La liste des commandes sous forme d'objet List<Order>.
      */
     public List<Order> getAllOrders() {
-        return orderRepository.findAll();
+        return em.createQuery("SELECT o FROM Order o", Order.class).getResultList();
     }
 
     /**
@@ -37,7 +41,7 @@ public class OrderService {
      * @return L'objet Order correspondant à l'identifiant donné.
      */
     public Order getOrderById(Long id) {
-        return orderRepository.findById(id);
+        return em.find(Order.class, id);
     }
 
     /**
@@ -52,7 +56,10 @@ public class OrderService {
             return null;
         }
         order.setId(id);
-        return orderRepository.update(order);
+        em.getTransaction().begin();
+        Order updatedOrder = em.merge(order);
+        em.getTransaction().commit();
+        return updatedOrder;
     }
 
     /**
@@ -60,9 +67,11 @@ public class OrderService {
      * @param id L'identifiant de la commande à supprimer.
      */
     public void deleteOrder(Long id) {
-        orderRepository.delete(id);
+        Order existingOrder = getOrderById(id);
+        if (existingOrder != null) {
+            em.getTransaction().begin();
+            em.remove(existingOrder);
+            em.getTransaction().commit();
+        }
     }
-
-
-
 }

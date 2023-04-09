@@ -5,10 +5,10 @@
         <class>com.cooperatives.produitEtUtilisateurs.models.Product</class>
         <class>com.cooperatives.produitEtUtilisateurs.models.User</class>
         <properties>
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/cooperative_db"/>
-            <property name="javax.persistence.jdbc.user" value="username"/>
-            <property name="javax.persistence.jdbc.password" value="password"/>
-            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://mysql-ismail.alwaysdata.net/ismail_commandes_db?useSSL=false&amp;allowPublicKeyRetrieval=true"/>
+            <property name="javax.persistence.jdbc.user" value="ismail_commandes"/>
+            <property name="javax.persistence.jdbc.password" value="#Commandes13#"/>
+            <property name="javax.persistence.schema-generation.database.action" value="none"/>
             <property name="eclipselink.logging.level" value="FINE"/>
             <property name="eclipselink.ddl-generation" value="create-tables"/>
         </properties>

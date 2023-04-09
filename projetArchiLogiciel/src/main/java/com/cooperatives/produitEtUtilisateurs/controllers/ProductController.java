@@ -13,13 +13,13 @@ import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import java.util.List;
 
+/**
+ * Contrôleur pour les opérations sur les produits.
+ */
 @Path("/products")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class ProductController {
-    /**
-     * Le service pour la gestion des produits.
-     */
     @Inject
     private ProductService productService;
 

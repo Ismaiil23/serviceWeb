@@ -7,9 +7,6 @@ import jakarta.persistence.Id;
 import java.time.LocalDateTime;
 import java.util.Map;
 
-/**
- * Entité représentant un panier.
- */
 @Entity
 public class Panier {
 

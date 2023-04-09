@@ -1,10 +1,9 @@
 package com.cooperatives.paniers.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Map;
 
 @Entity
@@ -16,7 +15,9 @@ public class Panier {
     private Long userId;
     private LocalDateTime lastUpdate;
     private boolean isValidated;
-    private Map<Long, Integer> products; // Clé : ID du produit, Valeur : Quantité
+
+    @OneToMany(mappedBy = "panier", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<ProductItem> products;
 
     // Getters and Setters
 
@@ -52,11 +53,11 @@ public class Panier {
         isValidated = validated;
     }
 
-    public Map<Long, Integer> getProducts() {
+    public List<ProductItem> getProducts() {
         return products;
     }
 
-    public void setProducts(Map<Long, Integer> products) {
+    public void setProducts(List<ProductItem> products) {
         this.products = products;
     }
 }

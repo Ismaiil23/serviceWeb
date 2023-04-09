@@ -9,7 +9,7 @@ import jakarta.ws.rs.core.Response;
 import java.util.List;
 
 /**
- * La classe PanierResource implémente les points d'accès à l'API pour les opérations CRUD sur les paniers.
+ * La classe PanierController implémente les points d'accès à l'API pour les opérations CRUD sur les paniers.
  */
 @Path("/paniers")
 public class PanierController {

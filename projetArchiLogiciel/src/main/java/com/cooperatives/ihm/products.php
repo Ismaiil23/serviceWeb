@@ -29,7 +29,7 @@
     });
 
     function loadProducts() {
-        $.get("http://example.com/api/products", function(data) {
+        $.get("http://localhost:8080/api/produits", function(data) {
             var productsHtml = "";
             data.forEach(function(product) {
                 productsHtml += `
